@@ -8,6 +8,10 @@ Below are some example question. You can write in your own format.
 - Created the initial Layout
 - Created routes for each page
 - Created a few basic components
+- Added a services section to handle saving data
+- Focused on completing one module - Category
+- Added a few styles to give the view to be similar to given design
+- Added error element to be visible if no other routes match the provided list of routes
 
 ## How much time did you spend on each step?
 

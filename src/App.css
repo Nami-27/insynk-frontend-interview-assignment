@@ -14,7 +14,10 @@ code {
 
 :root {
   --bg-blue: #a7dcf3;
+  --darker-blue: #189bd3;
+  --darkest-blue: #02329b;
 }
+
 .layout {
   height: 100vh;
   width: 100vw;
@@ -22,7 +25,6 @@ code {
   place-content: center;
   place-items: center;
 }
-
 .layout .container {
   width: 80%;
   height: 98%;
@@ -30,9 +32,9 @@ code {
   display: grid;
   grid-template-rows: 50px auto 50px;
 }
-
 .layout .container .header {
   background-color: var(--bg-blue);
+  color: var(--darkest-blue);
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -50,13 +52,53 @@ code {
   border: none;
   outline: none;
   background-color: var(--bg-blue);
+  color: white;
+  font-weight: 600;
 }
-.footer button.selected{
+.footer button.selected {
   background-color: #189bd3;
 }
-
 .layout.error,
 .layout.home {
   flex-direction: column;
   gap: 20px;
+}
+.layout .container .content {
+  display: flex;
+  place-content: center;
+  place-items: flex-start;
+  gap: 10px;
+}
+.category-listing .custom-button {
+  display: flex;
+  justify-content: flex-end;
+}
+.category-listing {
+  padding-top: 20px;
+}
+.category-listing .list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.category-listing .list .list-item {
+  color: var(--darker-blue);
+  padding: 5px 0px;
+  border-bottom: 1px solid var(--darkest-blue);
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.category-listing .list .list-item .close{
+  color: #ff0000;
+}
+.delete-content{
+  padding: 0px 10px;
+  color: var(--darkest-blue);
+}
+.delete-content ul{
+  padding-inline-start: 20px;
+  margin-block-start: 25px;
+  margin-block-end: 20px;
 }

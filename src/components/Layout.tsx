@@ -12,13 +12,27 @@ export const Layout: React.FC<{
     <div className="layout">
       <div className="container">
         <div className={`header ${button ? "with-button" : ""}`}>
-          <span>{title}</span>
+          <h4>{title}</h4>
           {button && button}
         </div>
         <div className="content">{children}</div>
         <div className="footer">
-          <button className={selected === 0 ? "selected" : ""} onClick={()=>{navigate('/track-expense')}}>Expense</button>
-          <button className={selected === 1 ? "selected" : ""} onClick={()=>{navigate('/list-category')}}>Category</button>
+          <button
+            className={selected === 0 ? "selected" : ""}
+            onClick={() => {
+              navigate("/track-expense");
+            }}
+          >
+            Expense
+          </button>
+          <button
+            className={selected === 1 ? "selected" : ""}
+            onClick={() => {
+              navigate("/list-category");
+            }}
+          >
+            Category
+          </button>
         </div>
       </div>
     </div>
