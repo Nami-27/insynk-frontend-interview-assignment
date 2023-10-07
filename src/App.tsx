@@ -1,25 +1,67 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Layout, Error, Home } from "./components";
+import {
+  AddExpense,
+  CategoryList,
+  EditExpense,
+  ExpenseTracking,
+} from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" errorElement={<Error />}>
+          <Route index element={<Home />} />
+          <Route
+            path="track-expense"
+            element={
+              <Layout
+                children={<ExpenseTracking />}
+                title="Expense Tracking"
+                selected={0}
+              />
+            }
+            errorElement={<Error />}
+          />
+          <Route
+            path="add-expense"
+            element={
+              <Layout
+                children={<AddExpense />}
+                title="Add Expense"
+                selected={0}
+              />
+            }
+            errorElement={<Error />}
+          />
+          <Route
+            path="edit-expense"
+            element={
+              <Layout
+                children={<EditExpense />}
+                title="Edit Expense"
+                selected={0}
+              />
+            }
+            errorElement={<Error />}
+          />
+          <Route
+            path="list-category"
+            element={
+              <Layout
+                children={<CategoryList />}
+                title="Category List"
+                selected={1}
+              />
+            }
+            errorElement={<Error />}
+          />
+          <Route path="*" element={<Error />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

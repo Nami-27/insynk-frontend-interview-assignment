@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --bg-blue: #a7dcf3;
+}
+.layout {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  place-content: center;
+  place-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.layout .container {
+  width: 80%;
+  height: 98%;
+  border: 1px solid gray;
+  display: grid;
+  grid-template-rows: 50px auto 50px;
+}
+
+.layout .container .header {
+  background-color: var(--bg-blue);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  place-content: center;
+  place-items: center;
+}
+.layout .container .footer {
+  background-color: var(--bg-blue);
+  display: flex;
+  place-content: space-around;
+  place-items: center;
+}
+.footer button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--bg-blue);
+}
+.footer button.selected{
+  background-color: #189bd3;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.layout.error,
+.layout.home {
+  flex-direction: column;
+  gap: 20px;
 }
