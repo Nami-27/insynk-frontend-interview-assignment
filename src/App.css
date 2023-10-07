@@ -54,6 +54,7 @@ code {
   background-color: var(--bg-blue);
   color: white;
   font-weight: 600;
+  white-space: nowrap;
 }
 .footer button.selected {
   background-color: #189bd3;
@@ -101,4 +102,12 @@ code {
   padding-inline-start: 20px;
   margin-block-start: 25px;
   margin-block-end: 20px;
+}
+.expense .footer button{
+  min-height: 35px;
+  min-width: 20vw;
+  padding: auto;
+}
+.expense{
+  min-width: 90%;
 }

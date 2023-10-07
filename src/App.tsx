@@ -1,6 +1,6 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Layout, Error, Home } from "./components";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { Layout, Error, Home, Button } from "./components";
 import {
   AddExpense,
   CategoryList,
@@ -21,6 +21,11 @@ function App() {
                 children={<ExpenseTracking />}
                 title="Expense Tracking"
                 selected={0}
+                button={
+                  <Link to={"/add-expense"}>
+                    <Button text="Add" />
+                  </Link>
+                }
               />
             }
             errorElement={<Error />}
