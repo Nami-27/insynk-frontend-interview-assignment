@@ -96,3 +96,40 @@
   flex-direction: row;
   place-content: space-around;
 }
+.expense div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 5px 0px;
+}
+.expense .footer {
+  flex-direction: row;
+}
+.expense div.type div {
+  margin: 0;
+}
+.expense-buttons {
+  display: flex;
+  place-content: space-around;
+  place-items: center;
+  gap: 10px;
+  padding: 10px 0px;
+  margin: 0 -20px;
+}
+.expense-buttons button {
+  width: 80%;
+  height: 90%;
+  min-height: 35px;
+}
+.expense-buttons button.confirm{
+  border: 1px solid var(--darker-blue);
+  background-color: var(--darker-blue);
+  color:#fff;
+  font-weight: 500;
+}
+.expense-buttons button.cancel{
+  border: 1px solid var(--darker-blue);
+  background-color: #fff;
+  color:var(--darker-blue);
+  font-weight: 500;
+}

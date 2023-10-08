@@ -12,6 +12,9 @@ Below are some example question. You can write in your own format.
 - Focused on completing one module - Category
 - Added a few styles to give the view to be similar to given design
 - Added error element to be visible if no other routes match the provided list of routes
+- Worked on the expenses module. Started by creating a server side data addition for the same by saving to localStorage.
+- Created a common Expense component that can be used for addition and with the values provided as Props.
+- Completed the Adding Expense component
 
 ## How much time did you spend on each step?
 

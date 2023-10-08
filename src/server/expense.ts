@@ -1,4 +1,12 @@
 // Function to add an expense to a category
+export interface ExpenseType {
+  type: 0 | 1; //0 -> Cash In ; 1-> Cash Out
+  category: string;
+  amount: number | undefined;
+  date: string;
+  description: string;
+}
+
 export function addExpenseToCategory(
   categoryName: string,
   type: string,
@@ -66,5 +74,3 @@ export function listAllExpensesInCategory(categoryName: string): any[] {
   );
   return storedExpenses[categoryName] || [];
 }
-
-

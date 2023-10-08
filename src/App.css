@@ -91,23 +91,36 @@ code {
   flex-direction: row;
   justify-content: space-between;
 }
-.category-listing .list .list-item .close{
+.category-listing .list .list-item .close {
   color: #ff0000;
 }
-.delete-content{
+.delete-content {
   padding: 0px 10px;
   color: var(--darkest-blue);
 }
-.delete-content ul{
+.delete-content ul {
   padding-inline-start: 20px;
   margin-block-start: 25px;
   margin-block-end: 20px;
 }
-.expense .footer button{
+.expense .footer button {
   min-height: 35px;
   min-width: 20vw;
   padding: auto;
 }
-.expense{
+.expense {
   min-width: 90%;
+}
+input,
+select {
+  min-height: 25px;
+}
+.layout .container.no-footer {
+  grid-template-rows: 50px auto;
+}
+.add-expense {
+  display: flex;
+  flex-direction: column;
+  place-content: space-between;
+  height: 100%;
 }

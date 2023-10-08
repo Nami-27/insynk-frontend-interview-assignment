@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import { ExpenseType } from "../server";
 
-export const Expense: React.FC = () => {
-  const [type, setType] = useState<0 | 1>(0);
+interface Props {
+  values: ExpenseType;
+  setValues: (
+    v: any,
+    t: "type" | "category" | "amount" | "date" | "description"
+  ) => void;
+}
+
+export const Expense: React.FC<Props> = ({ values, setValues }) => {
   let categories: string[] = JSON.parse(
     localStorage.getItem("categories") || "[]"
   );
@@ -12,14 +20,14 @@ export const Expense: React.FC = () => {
         <label>Type</label>
         <div className="footer">
           <button
-            className={type === 0 ? "selected" : ""}
-            onClick={() => setType(0)}
+            className={values?.type === 0 ? "selected" : ""}
+            onClick={() => setValues(0, "type")}
           >
             Cash In
           </button>
           <button
-            className={type === 1 ? "selected" : ""}
-            onClick={() => setType(1)}
+            className={values?.type === 1 ? "selected" : ""}
+            onClick={() => setValues(1, "type")}
           >
             Cash Out
           </button>
@@ -27,7 +35,13 @@ export const Expense: React.FC = () => {
       </div>
       <div className="category">
         <label>Category</label>
-        <select>
+        <select
+          value={values?.category}
+          onChange={(e) => setValues(e.target.value, "category")}
+        >
+          <option value="" disabled>
+            Select a category
+          </option>
           {categories?.map((item) => (
             <option key={item} value={item}>
               {item}
@@ -37,15 +51,28 @@ export const Expense: React.FC = () => {
       </div>
       <div>
         <label>Amount</label>
-        <input type="number" />
+        <input
+          type="number"
+          value={values?.amount || ""}
+          onChange={(e) => setValues(Number(e.target.value), "amount")}
+          required
+        />
       </div>
       <div>
         <label>Date</label>
-        <input type="date" />
+        <input
+          type="date"
+          value={values?.date}
+          onChange={(e) => setValues(e.target.value, "date")}
+          required
+        />
       </div>
       <div>
         <label>Description</label>
-        <textarea/>
+        <textarea
+          value={values?.description}
+          onChange={(e) => setValues(e.target.value, "description")}
+        />
       </div>
     </div>
   );

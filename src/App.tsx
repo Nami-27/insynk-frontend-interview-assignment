@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import { Layout, Error, Home, Button } from "./components";
+import { Layout, Error, Home, Button, ButtonWrapper } from "./components";
 import {
   AddExpense,
   CategoryList,
@@ -37,6 +37,7 @@ function App() {
                 children={<AddExpense />}
                 title="Add Expense"
                 selected={0}
+                separate={true}
               />
             }
             errorElement={<Error />}
@@ -48,6 +49,7 @@ function App() {
                 children={<EditExpense />}
                 title="Edit Expense"
                 selected={0}
+                separate={true}
               />
             }
             errorElement={<Error />}
