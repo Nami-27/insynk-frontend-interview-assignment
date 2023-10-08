@@ -15,6 +15,8 @@ Below are some example question. You can write in your own format.
 - Worked on the expenses module. Started by creating a server side data addition for the same by saving to localStorage.
 - Created a common Expense component that can be used for addition and with the values provided as Props.
 - Completed the Adding Expense component
+- Next worked on listing the added expenses
+- For that, I added a function to return all the expense stored. And these will be further grouped on the basis of date provided. The grouped data should then be listed as provided in the design. So modified the styles to have similar look and feel.
 
 ## How much time did you spend on each step?
 

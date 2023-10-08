@@ -124,3 +124,32 @@ select {
   place-content: space-between;
   height: 100%;
 }
+.expense-tracking {
+  color: var(--darker-blue);
+}
+.expense-tracking .month-list {
+  padding: 20px 0;
+}
+.expense-tracking .list {
+  list-style: none;
+}
+.expense-tracking .list div {
+  display: flex;
+  place-content: space-between;
+  gap: 20px;
+  min-width: 60vw;
+  padding: 10px;
+  border-bottom: 2px solid var(--darker-blue);
+}
+
+.expense-tracking .list div.in {
+  color: green;
+  border-bottom: 2px solid green;
+}
+.month-total {
+  display: flex;
+  place-content: space-between;
+  place-items: center;
+  border-bottom: 3px solid var(--darkest-blue);
+  padding: 10px 0px;
+}

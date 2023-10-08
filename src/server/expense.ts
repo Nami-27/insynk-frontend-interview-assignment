@@ -74,3 +74,10 @@ export function listAllExpensesInCategory(categoryName: string): any[] {
   );
   return storedExpenses[categoryName] || [];
 }
+
+export function listAllExpenses(): { [key: string]: any[] }  {
+  const storedExpenses: { [key: string]: any[] } = JSON.parse(
+    localStorage.getItem("expenses") || "{}"
+  );
+  return storedExpenses || {};
+}
